@@ -42,12 +42,12 @@ public class MinAndMaxNumber {
 		int min4 = list.stream().min(Integer::compareTo).get();
 		System.out.println(min4);
 		
-		int max4 = list.stream().max(Integer::compareTo).get();
+		int max4 = list.stream().max((a,b)->a.compareTo(b)).get();
 		System.out.println(max4);
 		
 		//Approach5 -> using maptoint
 		
-		int min5 = list.stream().mapToInt(Integer::intValue).min().getAsInt();
+		int min5 = list.stream().mapToInt(n->n).min().getAsInt();
 		System.out.println(min5);
 		
 		int max5 = list.stream().mapToInt(Integer::intValue).max().getAsInt();
